@@ -21,6 +21,7 @@ import { Loader } from "@/components/loader";
 import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
+import toast from "react-hot-toast";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -51,6 +52,7 @@ const ConversationPage = () => {
       form.reset();
     } catch (error: any) {
       // TODO: Open Pro Model
+      toast.error(error.message);
       console.log(error);
     } finally {
       router.refresh();

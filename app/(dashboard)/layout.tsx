@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
 import React from "react";
+import { Toaster } from "react-hot-toast";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,6 +10,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
         <Sidebar />
       </div>
       <main className="md:pl-72">
+        <Toaster />
         <Navbar />
         {children}
       </main>

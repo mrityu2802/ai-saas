@@ -22,6 +22,7 @@ import { Loader } from "@/components/loader";
 import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
+import toast from "react-hot-toast";
 
 const CodePage = () => {
   const router = useRouter();
@@ -51,6 +52,7 @@ const CodePage = () => {
       setMessages((current) => [...current, userMessage, response.data]);
       form.reset();
     } catch (error: any) {
+      toast.error(error.message);
       console.log(error);
     } finally {
       router.refresh();

@@ -28,6 +28,7 @@ import { Empty } from "@/components/empty";
 import { Loader } from "@/components/loader";
 import { cn } from "@/lib/utils";
 import { Card, CardFooter } from "@/components/ui/card";
+import toast from "react-hot-toast";
 
 const ImagePage = () => {
   const router = useRouter();
@@ -55,6 +56,7 @@ const ImagePage = () => {
       form.reset();
     } catch (error: any) {
       // TODO: Open Pro Model
+      toast.error(error.message);
       console.log(error);
     } finally {
       router.refresh();
