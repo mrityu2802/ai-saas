@@ -52,7 +52,7 @@ const CodePage = () => {
       setMessages((current) => [...current, userMessage, response.data]);
       form.reset();
     } catch (error: any) {
-      toast.error(error.message);
+      toast.error("Failed to generate code!");
       console.log(error);
     } finally {
       router.refresh();

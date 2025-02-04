@@ -56,7 +56,7 @@ const ImagePage = () => {
       form.reset();
     } catch (error: any) {
       // TODO: Open Pro Model
-      toast.error(error.message);
+      toast.error("Failed to generate image!");
       console.log(error);
     } finally {
       router.refresh();
